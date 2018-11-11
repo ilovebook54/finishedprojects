@@ -2,7 +2,7 @@
 int RELAY_PIN = 12;
 const char* password = "";
 const char* ssid = "default";
-const int port = 8181;
+const int port = 8282;
 
 WiFiServer server(port);
 
@@ -47,13 +47,13 @@ char* handleCmd(uint8_t cmd) {
     case 49:
    //     Serial.println("In Case 49");
         digitalWrite(RELAY_PIN, HIGH);
-        return "ON";
+        return "On \n";
     case 48:
    //     Serial.println("In Case 48");
         digitalWrite(RELAY_PIN, LOW);
-        return "OFF";
+        return "Off \n";
     default:
-        return ".";
+        return "";
   }
 }
 
