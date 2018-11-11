@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 int RELAY_PIN = 12;
 const char* password = "";
-const char* ssid = "default";
-const int port = 8282;
+const char* ssid = "Arduino-WiFi";
+const int port = 8484;
 
 WiFiServer server(port);
 
