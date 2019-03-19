@@ -48,7 +48,7 @@ void loop()
   {
     switch (results.value)
     {
-      case 0xFD50AF:  Serial.println("Forward"); // Button 2
+      case 0xFF629D:  Serial.println("Forward"); // Button 2
         function_ultrasonic();
         digitalWrite(5, LOW);
         digitalWrite(6, HIGH);
@@ -56,7 +56,7 @@ void loop()
         digitalWrite(8, HIGH);
         function_ultrasonic();
         break;
-      case 0xFD10EF:  Serial.println("Backwards"); // Button 4
+      case 0xFFA857:  Serial.println("Backwards"); // Button 4
         function_ultrasonic();
         digitalWrite(5, HIGH);
         digitalWrite(6, LOW);
@@ -64,7 +64,7 @@ void loop()
         digitalWrite(8, LOW);
         function_ultrasonic();
         break;
-      case 0xFD00FF:  Serial.println("Stop"); // Button 5
+      case 0xFF02FD:  Serial.println("Stop"); // Button 5
         function_ultrasonic();
         digitalWrite(5, LOW);
         digitalWrite(6, LOW);
@@ -72,7 +72,7 @@ void loop()
         digitalWrite(8, LOW);
         function_ultrasonic();
         break;
-      case 0xFD08F7:  Serial.println("Turn"); // Button 6
+      case 0xFFC23D:  Serial.println("Turn Right"); // Button 6
         function_ultrasonic();
         digitalWrite(5, HIGH);
         digitalWrite(6, HIGH);
@@ -80,6 +80,8 @@ void loop()
         digitalWrite(8, HIGH);
         function_ultrasonic();
         break;
+
+       
         /*case 0x1FEF00F:  //Serial.println("Right"); // Button 8
                          digitalWrite(5,LOW);
                          digitalWrite(6,HIGH);
@@ -115,9 +117,12 @@ void function_ultrasonic ()
   Serial.print("Distance: ");
   Serial.println(distance);
 
-  if (distance <= 17)
+  if (distance < 5 && distance > 0)
   {
     Serial.println("Ultrasonic");
+   Serial.print("Distance: ");
+    Serial.println(distance);
+
     digitalWrite(5, LOW);
     digitalWrite(6, LOW);
     digitalWrite(7, LOW);

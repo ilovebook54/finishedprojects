@@ -1,3 +1,8 @@
+#include <boarddefs.h>
+#include <IRremote.h>
+#include <IRremoteInt.h>
+#include <ir_Lego_PF_BitStreamEncoder.h>
+
 
 
 /*
@@ -67,7 +72,7 @@ void loop()
       Serial.println(results.value, HEX);
       Serial.print(results.value);
 
-      if (results.value == 0xA32AB931)
+      if (results.value == 0xFD00F)
       {
 
         digitalWrite(ledPin, LOW);
@@ -76,7 +81,7 @@ void loop()
 
       }
 
-      else if (results.value == 0x371A3C86)
+      else if (results.value == 0xFD08F7)
       {
 
         digitalWrite(ledPin, HIGH);
